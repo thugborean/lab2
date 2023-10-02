@@ -1,0 +1,14 @@
+F1
+
+feltyp: NullPointerException
+felet uppträder i klassen: Scheduler, TestScheduler
+i metoden: machineWithLeastToDo, makeSchedule, main
+på raden: 19, 34, 28
+orsak till felet: Machines[] var före machines när det redan är deklarerar som ett privat variabel längre upp i koden
+
+feltyp: ArrayIndexOutOfBoundsException
+felet uppträder i klassen: Scheduler, TestScheduler
+i metoden: printSchedule, main
+på raden: 49, 22
+orsak till felet: i printSchedule var i <= i for-loopen vilket skapade index out of bounds
+

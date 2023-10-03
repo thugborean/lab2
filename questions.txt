@@ -12,3 +12,13 @@ i metoden: printSchedule, main
 på raden: 49, 22
 orsak till felet: i printSchedule var i <= i for-loopen vilket skapade index out of bounds
 
+F2
+
+4.
+Svar: Metoden jämförde skillnaden mellan tiden på j1 och j2 när den borde jämföra skillnaden på j2 och j1.
+
+5.
+Svar: Maskinerna sorterades inte efter varje jobb hade tilldelats, i assignJob så adderades ej tiden utan tilldelades bara.
+
+F3
+Svar: Man kan använda Comparator för att jämföra deras tider.

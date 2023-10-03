@@ -1,6 +1,8 @@
 package lpt;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Scheduler {
@@ -13,6 +15,7 @@ public class Scheduler {
 	}
 	
 	/* Returnerar den maskin som har minst att göra. */
+	// Retired
 	private Machine machineWithLeastToDo() {
 		int min = Integer.MAX_VALUE;
 		int minPos = -1;
@@ -28,13 +31,17 @@ public class Scheduler {
 	
 	/** Fördelar jobben i listan jobs på maskinerna. */
 	public void makeSchedule(List<Job> jobs) {
-		List<Job> tempJobList = new ArrayList<>(jobs);
-		tempJobList.sort((j1, j2) -> j1.getTime() - j2.getTime());
-		for (Job j : tempJobList) {
-			Machine m = machineWithLeastToDo();	
-			m.assignJob(j);
-		}	
-	}
+    List<Job> tempJobList = new ArrayList<>(jobs);
+    tempJobList.sort((j1, j2) -> j2.getTime() - j1.getTime());
+
+    for (Job j : tempJobList) {
+        Machine m = machineWithLeastToDo();
+        m.assignJob(j);
+        // Omsortera maskiner efter varje jobb tilldelas
+        Arrays.sort(machines, Comparator.comparingInt(Machine::getScheduledTime));
+    }
+}
+
 	
 	/** Tar bort alla jobb från maskinerna. */
 	public void clearSchedule() {
@@ -45,6 +52,7 @@ public class Scheduler {
 
 	/** Skriver ut maskinernas scheman. */
 	public void printSchedule() {
+		Arrays.sort(machines, Comparator.comparingInt(Machine::getNbr)); // 
 		for (int i = 0; i < machines.length; i++) {
 			System.out.println(machines[i]);
 		}

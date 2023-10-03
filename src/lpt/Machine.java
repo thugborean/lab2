@@ -14,10 +14,15 @@ public class Machine {
 		scheduledTime = 0;
 	}
 
+	/** Returnerar maskinens nummer (detta är en tillagd metod) */
+	public int getNbr() {
+		return this.nbr;
+	}
+
 	/** Tilldelar maskinen jobbet j. */
 	public void assignJob(Job j) {
 		jobs.add(j);
-		scheduledTime = j.getTime();
+		scheduledTime += j.getTime();
 	}
 	
 	/** Tar bort alla jobb från maskinen. */

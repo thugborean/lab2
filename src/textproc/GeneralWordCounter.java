@@ -11,13 +11,15 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class GeneralWordCounter implements TextProcessor{
-	private Map<String, Integer> map = new TreeMap<String, Integer>();
+	private Map<String, Integer> map = new HashMap<String, Integer>();
+	// En collection utan duplikanter
 	private Set<String> nonCountedWords;
 	
 	public GeneralWordCounter(Set<String> nonCountedWords) {
 		this.nonCountedWords = nonCountedWords;
 	}
 	
+
 	public void process(String word) {
 		if(map.containsKey(word)) {
 			map.replace(word, map.get(word) + 1);

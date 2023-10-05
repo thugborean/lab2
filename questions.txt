@@ -12,3 +12,41 @@ i metoden: printSchedule, main
 på raden: 49, 22
 orsak till felet: i printSchedule var i <= i for-loopen vilket skapade index out of bounds
 
+F2
+
+4.
+Svar: Metoden jämförde skillnaden mellan tiden på j1 och j2 när den borde jämföra skillnaden på j2 och j1.
+
+5.
+Svar: Maskinerna sorterades inte efter varje jobb hade tilldelats, i assignJob så adderades ej tiden utan tilldelades bara.
+
+F3
+Svar: Man kan använda Comparator för att jämföra deras tider.
+
+D13 Justera dina klasser GeneralWordCounter och MultiWordCounter, så att den använder
+TreeMap istället för HashMap. Om du har gjort rätt så räcker det ändra på ett ställe i
+vardera klassen.
+
+Fungerar ditt program fortfarande?
+    Ja.
+Hur påverkas ordningen i det utskrivna resultatet?
+    Med TreeMap så skrivs landskapen ut i bokstavsordning.
+Hur påverkas exekveringstiden? (Beräkna även här medianvärdet från tre körningar.)
+    TreeMap = 0.56 sekunder
+    HashMap = 0.56 sekunder
+
+D14
+Vad är det för skillnad på Map och HashMap?
+    Map är en abstrakt datatyp och HashMap är en av dess implemetationer.
+    HashMap förvara key/value-pairs och använder sig av hashing vilket är ett värde som är olika för varje objekt och som kan användas som idientifierare.
+Vad är det för skillnad på HashMap och TreeMap? Vad beror skillnaderna på?
+    HashMap implementerar Map interface, medan TreeMap implementerar SortedMap interface.
+    TreeMap använder sig av binary tree search vilket sorterar elementen i TreeMap efter deras naturliga ordning.
+På laborationen har du bl.a. använt de abstrakta datatyperna mängd och map. Vad har de för speciella egenskapar som gör dem lämpliga att använda på det sätts som har gjorts?
+    Map är användbart för att i våra listor behöver vi både förvara vilket slags ord men också hur många gåmger det förekommer, String Integer.
+    Collection är en grupp av individuella objekt, collections är användbara för att samla objekt och beroende på vilken typ av implementation kan de göra olika saker.
+Du har även använt Javas inbyggda sortering med hjälp av en sorteringsordning
+du själv angivit. Hur fungerar det? Och vilken funktion har interfacet Comparator i
+detta?
+    Comparator har den abstrakta funktionen compare vilket kan användas för att jämföra två objekt och returnerar negativ int, noll, 
+    eller positiv int om det första objektet är mindre än, lika stor, eller större än det andra objektet.

@@ -1,4 +1,3 @@
-package lpt;
 
 public class Job {
 	private String name;

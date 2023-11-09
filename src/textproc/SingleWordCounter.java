@@ -1,4 +1,3 @@
-package textproc;
 
 // Läser av ett enstaka ord
 public class SingleWordCounter implements TextProcessor {
